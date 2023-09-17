@@ -8,12 +8,10 @@ numpy.random.seed(42)
 ### The words (features) and authors (labels), already largely processed.
 ### These files should have been created from the previous (Lesson 10)
 ### mini-project.
-words_file = "../text_learning/your_word_data.pkl" 
-authors_file = "../text_learning/your_email_authors.pkl"
+words_file = "../tools/word_data.pkl" 
+authors_file = "../tools/email_authors.pkl"
 word_data = joblib.load( open(words_file, "r"))
 authors = joblib.load( open(authors_file, "r") )
-
-
 
 ### test_size is the percentage of events assigned to the test set (the
 ### remainder go into training)
@@ -37,6 +35,18 @@ labels_train   = labels_train[:150]
 
 
 ### your code goes here
+
+# 25. Quiz. Number of Features
+print ('number of training points: ', len(features_train))
+
+# 26. Quiz. Accuracy of Your Over-fitting tree
+
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.metrics import accuracy_score
+
+clf = DecisionTreeClassifier()
+clf.fit(features_train, labels_train)
+print ('accuracy: ', clf.score(features_test, labels_test))
 
 
 
