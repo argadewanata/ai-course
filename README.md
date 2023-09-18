@@ -1,1 +1,1 @@
-# dikti-course
+# ai-course
